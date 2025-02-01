@@ -40,5 +40,6 @@ jobs:
   
       - name: Deploy docs with Mike
         run: |
+          git checkout "${TAG_NAME}"
           mike deploy --push "${TAG_NAME}"
           mike deploy --push --update-aliases "${TAG_NAME}"
