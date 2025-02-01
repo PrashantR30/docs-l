@@ -1,0 +1,11 @@
+# mkdocs folder
+mkdocs
+
+# ditors
+.idea
+*.swp
+*.swo
+*~.cursorrules
+*~.gitignore
+
+.venv

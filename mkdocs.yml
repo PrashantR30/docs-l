@@ -1,0 +1,112 @@
+site_name: k0rdent
+site_author: Mirantis
+docs_dir: ./docs
+repo_name: GitHub
+repo_url: https://github.com/k0rdent/kcm
+copyright:
+  '© 2005 - 2025 Mirantis, Inc. All rights reserved.'
+theme:
+  name: "material"
+  font:
+    text: Overpass
+    code: Roboto Mono
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+
+  icon: assets/mirantis-logo-inverted-horizontal-one-color.svg
+  logo: assets/mirantis-logo-inverted-horizontal-one-color.svg
+  favicon: assets/favicon.ico
+
+  search: true
+  search_index_only: true
+  features:
+    - toc.autohide
+    - search.suggest
+    - search.highlight
+    # - navigation.sections
+    # - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.footer
+    - navigation.path
+    - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - mermaid2
+
+#extra:
+#  generator: false
+
+# Page tree
+
+markdown_extensions:
+  - callouts
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: "#"
+      toc_depth: 3
+nav:
+  - Home: index.md
+  - Quick Start:
+    - Installation: quick-start/installation.md
+    - AWS: quick-start/aws.md
+    - Azure: quick-start/azure.md
+    - vSphere: quick-start/vsphere.md
+    - OpenStack: quick-start/openstack.md
+  - Usage:
+      - Installation Guide: usage/installation.md
+      - Extended Management Configuration: usage/management-configuration.md
+      - Adopting Existing Clusters Guide: usage/adopt-existing-cluster.md
+#     - Air-gapped Installation Guide: usage/airgap.md
+      - Create Cluster Deployment: usage/create-cluster-deployment.md
+      - Cluster Updates: usage/cluster-update.md
+      - k0rdent Upgrade: usage/upgrade.md
+  - Templates:
+      - Overview: template/main.md
+      - BYO Templates: template/byo-templates.md
+  - ClusterTemplates:
+      - AWS & EKS:
+        - Template Parameters: clustertemplates/aws/template-parameters.md
+        - Hosted Control Plane: clustertemplates/aws/hosted-control-plane.md
+      - Azure:
+        - Template Parameters: clustertemplates/azure/template-parameters.md
+        - Hosted Control Plane: clustertemplates/azure/hosted-control-plane.md
+      - vSphere:
+        - Template Parameters: clustertemplates/vsphere/template-parameters.md
+        - Hosted Control Plane: clustertemplates/vsphere/hosted-control-plane.md
+      - OpenStack:
+        - Template Parameters: clustertemplates/openstack/template-parameters.md
+  - Credentials:
+      - Overview: credential/main.md
+      - Distribution: credential/distribution.md
+  - RBAC:
+      - Overview: rbac/roles.md
+  - Disaster Recovery:
+      - Overview: disaster-recovery/overview.md
+      - Customization: disaster-recovery/customization.md
+  - Architecture:
+      - Overview: architecture/architecture.md
+      - k0rdent initialization process: architecture/initialization.md
+  - Glossary: glossary.md
