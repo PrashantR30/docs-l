@@ -43,6 +43,12 @@ theme:
     - navigation.path
     - content.code.copy
 
+
+extra:
+  version:
+    provider: mike
+    default: latest
+    
 extra_css:
   - stylesheets/extra.css
 
