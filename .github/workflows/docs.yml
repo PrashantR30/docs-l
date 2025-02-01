@@ -44,4 +44,4 @@ jobs:
         run: |
             git checkout "$TAG_NAME"
             mike deploy "$TAG_NAME" --push
-            mike set-default "TAG_NAME" --push
+            mike set-default "$TAG_NAME" --push
