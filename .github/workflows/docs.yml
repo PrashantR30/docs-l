@@ -40,6 +40,9 @@ jobs:
   
       - name: Deploy docs with Mike
         run: |
-          git checkout "${TAG_NAME}"
+          git fetch origin gh-pages
+          git checkout gh-pages
+          git reset --hard origin/gh-pages
+
           mike deploy --push "${TAG_NAME}"
           mike deploy --push --update-aliases "${TAG_NAME}"
