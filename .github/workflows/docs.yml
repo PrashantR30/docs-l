@@ -36,8 +36,9 @@ jobs:
 
       - name: Extract version from tag
         run: |
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
+            TAG_NAME=$(git tag --list "v*" --sort=-version:refname | head -n 1)
+            echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
+            echo "Extracted TAG_NAME: ${TAG_NAME}"
 
       - name: Deploy Docs for the Last 3 Tags
         run: |
